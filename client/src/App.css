@@ -40,7 +40,7 @@
 }
 
 .post-card {
-  /* overflow: hidden; */
+  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -75,4 +75,10 @@
 .header {
     background-color: #f2f2f2;
     height: 50px;
+}
+
+.main-menu {
+    height: 80vh;
+    background-color: #e8e8e8;
+    width: 200px;
 }

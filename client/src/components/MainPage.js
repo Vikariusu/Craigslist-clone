@@ -1,9 +1,10 @@
 import React from 'react';
+import MainMenu from './MainMenu';
 
 const MainPage = () => {
     return (
         <div>
-            This is the main page 
+            <MainMenu />
         </div>
     )
 }
