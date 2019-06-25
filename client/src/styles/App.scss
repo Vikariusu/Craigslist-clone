@@ -1,16 +1,10 @@
 @import 'variables';
+@import 'Header';
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-
-  a {
-    text-decoration: none;
-    &:visited {
-      color: inherit;
-    }
-  }
 }
 
 /* // Smallest device */
@@ -78,11 +72,6 @@
     align-items: flex-end;
     position: relative;
   }
-}
-
-.header {
-    background-color: #f2f2f2;
-    height: 50px;
 }
 
 .main-menu {
