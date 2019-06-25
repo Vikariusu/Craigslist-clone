@@ -1,0 +1,13 @@
+.main-header {
+    background-color: $primary-color;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 40px;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
