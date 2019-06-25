@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import './App.css';
+import './styles/App.scss';
 import Header from "./components/Header";
 import MainPage from "./components/MainPage";
 import PostView from "./components/PostView";
