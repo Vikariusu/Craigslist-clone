@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Category = require("./category");
 
 const postSchema = new mongoose.Schema({
     title: {
@@ -26,6 +27,10 @@ const postSchema = new mongoose.Schema({
     canDeliver: {
         type: Boolean,
         default: false
+    },
+    category: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Category" 
     },
     created_date: {
         type: Date,
