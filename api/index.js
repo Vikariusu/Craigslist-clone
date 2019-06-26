@@ -14,6 +14,7 @@ mongoose.Promise = Promise;
 app.use(cors({ origin: '*' }));
 
 const postRoutes = require('./routes/posts');
+const categoryRoutes = require('./routes/categories');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,6 +24,7 @@ app.get("/", function (req, res) {
 })
 
 app.use('/api/posts', postRoutes);
+app.use('/api/categories', categoryRoutes);
 
 app.listen(3000, function () {
     console.log("~ Staring the server ~");
