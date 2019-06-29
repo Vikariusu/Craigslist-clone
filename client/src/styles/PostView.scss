@@ -1,0 +1,25 @@
+.post-view {
+    font-family: $primary-font;
+    color: $font-color;
+    font-size: $body-font-size;
+    display: flex;
+    padding: 20px 0;
+    width: 72rem;
+    margin: 0 auto;
+
+    .post-view__main {
+        display: block;
+        padding-right: 30px;
+    }
+
+    .post-view__side-info {
+        width: 40rem;
+        display: block;
+        padding-left: 20px;
+    }
+
+    .post-view__product-details {
+        border-left: 2px solid $dark-gray;
+        padding-left: 20px;
+    }
+}

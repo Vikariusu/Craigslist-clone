@@ -23,14 +23,15 @@ router.post("/", function (req, res) {
         })
 });
 
-router.get("/:postId", function (req, res) {
-    db.Post.findById(req.params.postId)
-        .then(function (foundPost) {
-            res.json(foundPost);
-        })
-        .catch(function (err) {
-            res.send(err);
-        })
+router.get("/:postId", async (req, res) => {
+    try {
+        const foundPost = await db.Post.findById(req.params.postId)
+        const location = await db.Neighborhood.find({name: foundPost.location});
+
+        res.json({...foundPost._doc, location: location[0]});
+    } catch (err) {
+        res.send(err);
+    }
 });
 
 module.exports = router;
