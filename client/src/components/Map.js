@@ -17,13 +17,15 @@ const apiIsLoaded = (map, maps, center) => {
 
 const SimpleMap = ({ center, zoom }) => {
     return (
-        <GoogleMapReact
-            bootstrapURLKeys={{ key: 'XXXXXX' }}
-            yesIWantToUseGoogleMapApiInternals={true}
-            defaultZoom={zoom}
-            defaultCenter={center}
-            onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, center)}
-        />
+        <div style={{ height: '40vh', width: '100%' }}>
+            <GoogleMapReact
+                bootstrapURLKeys={{ key: 'XXXX' }}
+                yesIWantToUseGoogleMapApiInternals={true}
+                defaultZoom={zoom}
+                defaultCenter={center}
+                onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, center)}
+            />
+        </div>
     );
 };
 
