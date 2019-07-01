@@ -6,7 +6,7 @@ class PostCard extends React.Component {
 
         this.state = {
             inFavorites: false,
-            image: this.props[0].image ? this.props[0].image : 'https://www.lampsplus.com/images/landing-pages/table-lamps-n/table-lamps_traditional-0227.jpg'
+            image: this.props[0].imageUrl ? this.props[0].imageUrl : 'https://www.lampsplus.com/images/landing-pages/table-lamps-n/table-lamps_traditional-0227.jpg'
         };
     }
 
@@ -17,9 +17,9 @@ class PostCard extends React.Component {
                 <div className="post-card-infos">
                     <div>
                         <h2>{this.props[0].title}</h2>
-                        <p>Short description here!</p>
+                        <p>{this.props[0].location}</p>
                     </div>
-                    <h2 className="post-card-pricing">£99.99</h2>
+                    <h2 className="post-card-pricing">{this.props[0].price}</h2>
                 </div>
             </div>
         )

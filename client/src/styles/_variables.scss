@@ -1,0 +1,28 @@
+$primary-color: #DDDDDD;
+$dark-gray: #AAAAAA;
+$backgroud-color: #EEEEEE;
+$pastel-gray: #CCCCCC;
+$almost-black-gray: #797979;
+
+$amazon: #F7717D;
+
+// Main action btn
+.btn-primary {
+    background-color: $backgroud-color;
+    border-radius: 2px;
+    border: none;
+    padding: 6px 10px;
+    font-size: $side-text;
+    color: $almost-black-gray;
+}
+
+.btn-secondary {
+    background-color: $amazon;
+    border-radius: 2px;
+    border: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}

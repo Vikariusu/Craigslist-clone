@@ -15,6 +15,7 @@ app.use(cors({ origin: '*' }));
 
 const postRoutes = require('./routes/posts');
 const categoryRoutes = require('./routes/categories');
+const neighborhoodRoutes = require('./routes/neighborhoods');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +26,7 @@ app.get("/", function (req, res) {
 
 app.use('/api/posts', postRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/neighborhoods', neighborhoodRoutes);
 
 app.listen(3000, function () {
     console.log("~ Staring the server ~");

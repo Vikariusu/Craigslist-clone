@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+// Font Families
+$primary-font: 'Lato';
+
+// Font Sizes
+$side-text: 14px;
+$body-font-size: 16px;
+$main-heading-size: 19px;
+
+// Font Colors
+$font-color: #2d2d2d;
+
+// H2
+.secondary--heading {
+    font-size: $body-font-size;
+}
