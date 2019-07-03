@@ -29,10 +29,11 @@ class PostList extends React.Component {
 
     render() {
         return(
-            <div className="cards">
-                {this.renderPosts()}
+            <div className="cards__outer">
+                <div className="cards">
+                    {this.renderPosts()}
+                </div>
             </div>
-
         )
     }
 }

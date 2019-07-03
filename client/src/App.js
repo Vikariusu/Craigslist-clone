@@ -15,8 +15,8 @@ const App = () => {
           <Header />
           <Route path="/" exact component={MainPage} />
           <Route path="/posts" exact component={PostList} />
-          <Route path="/posts/new" exact component={PostCreate} />
           <Route path="/posts/:id" component={PostView} />
+          {/* <Route path="/new" exact component={PostCreate} /> */}
         </div>
       </BrowserRouter>
     </div>

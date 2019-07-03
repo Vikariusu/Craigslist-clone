@@ -11,6 +11,8 @@ class PostCard extends React.Component {
     }
 
     render() {
+        const displayPrice = this.props[0].price ? `$${this.props[0].price}` : '$0';
+
         return (
             <div className="post-card">
                 <img src={this.state.image} />
@@ -19,7 +21,7 @@ class PostCard extends React.Component {
                         <h2>{this.props[0].title}</h2>
                         <p>{this.props[0].location}</p>
                     </div>
-                    <h2 className="post-card-pricing">{this.props[0].price}</h2>
+                    <p className="post-card-pricing">{displayPrice}</p>
                 </div>
             </div>
         )
