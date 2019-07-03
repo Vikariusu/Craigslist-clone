@@ -8,7 +8,7 @@ const Header = () => {
                 <Link to="/">
                     <img src="https://cdn0.iconfinder.com/data/icons/shopping-76/100/Artboard_18-512.png" />
                 </Link>
-                <Link to="/posts/new">
+                <Link to="/new">
                     <button className="btn-secondary">New post</button>
                 </Link>
             </div>
