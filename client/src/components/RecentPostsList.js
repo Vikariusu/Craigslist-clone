@@ -2,7 +2,7 @@ import React from 'react';
 import PostCard from './PostCard';
 import { Link } from 'react-router-dom'
 
-class PostList extends React.Component {
+class RecentPostsList extends React.Component {
     constructor(props) {
         super(props);
 
@@ -10,24 +10,8 @@ class PostList extends React.Component {
             isLoading: false,
             data: []
         };
-    }
 
-    componentDidMount() {
-        this.fetchPosts(this.props);
-    }
-
-    fetchPosts({loadRecent, category}) {
-        let queryURL = 'http://localhost:3000/api/posts/'
-        let params = "";
-        if (loadRecent) {
-            params += 'loadrecent=8';
-        }
-
-        // if (category) {
-        //     queryURL += '/category';
-        // }
-
-        fetch(`${queryURL}?${params}`)
+        fetch('http://localhost:3000/api/posts/recent/8')
             .then(response => response.json())
             .then(data => this.setState({ data }))
     }
@@ -43,14 +27,18 @@ class PostList extends React.Component {
     }
 
     render() {
-        return(
-            <div className="cards__outer">
-                <div className="cards">
-                    {this.renderPosts()}
+        return (
+            <div className="recent-posts-list">
+                <div className="recent-posts-list__caption">Recently posted</div>
+                <div className="cards__outer">
+                    <div className="cards">
+                        {this.renderPosts()}
+                    </div>
                 </div>
             </div>
+
         )
     }
 }
 
-export default PostList;
+export default RecentPostsList;

@@ -3,7 +3,9 @@ const router = express.Router();
 const db = require("../models");
 
 router.get('/', function(req, res) {
-    db.Post.find()
+    const limit = req.query.loadrecent ? parseInt(req.query.loadrecent) : 999;
+
+    db.Post.find().sort({ _id: -1 }).limit(limit)
         .then(function (posts) {
             res.json(posts);
         })
@@ -13,7 +15,6 @@ router.get('/', function(req, res) {
 });
 
 router.post("/", function (req, res) {
-    console.log(req.body);
     db.Post.create(req.body)
         .then(function (newPost) {
             res.status(201).json(newPost);

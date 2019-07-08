@@ -1,0 +1,36 @@
+.main-page__outer {
+    display: flex;
+}
+
+.main-menu {
+    height: 50vh;
+    background-color: #e8e8e8;
+    width: 200px;
+    font-family: $primary-font;
+    margin-top: 40px;
+    border-radius: 0 2px 2px 0;
+
+    &__caption {
+        margin-top: 0;
+        z-index: -999;
+        padding: 14px 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    &__categories-list {
+        padding-left: 16px;
+
+        &__item {
+            margin: 4px 0;
+        }
+    }
+}
+
+.recent-posts-list {
+    margin-top: 40px;
+
+    .recent-posts-list__caption {
+        padding: 14px 16px 10px 16px;
+    }
+}
