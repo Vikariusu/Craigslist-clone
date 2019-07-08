@@ -5,9 +5,8 @@
 @import 'PostView';
 @import 'PostList';
 @import 'PostCard';
+@import 'MainPage';
 
-.main-menu {
-    height: 80vh;
-    background-color: #e8e8e8;
-    width: 200px;
+li {
+    list-style: none;
 }

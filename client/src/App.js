@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import MainPage from "./components/MainPage";
 import PostView from "./components/PostView";
 import PostCreate from "./components/PostCreate";
-import PostList from "./components/PostList";
+import CategoryPage from "./components/CategoryPage";
 
 const App = () => {
   return (
@@ -14,9 +14,10 @@ const App = () => {
         <div>
           <Header />
           <Route path="/" exact component={MainPage} />
-          <Route path="/posts" exact component={PostList} />
+          {/* <Route path="/posts" exact component={PostList} /> */}
+          <Route path="/categories/:categoryName" exact component={CategoryPage} />
           <Route path="/posts/:id" component={PostView} />
-          {/* <Route path="/new" exact component={PostCreate} /> */}
+          <Route path="/new" exact component={PostCreate} />
         </div>
       </BrowserRouter>
     </div>
