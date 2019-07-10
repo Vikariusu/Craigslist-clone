@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 
 router.post("/", function (req, res) {
     console.log(req.body);
-    db.Neighborhood.create(req.body)
+    db.Neighborhood.create({...req.body, _id: req.body.name})
         .then(function (newNeighborhood) {
             res.status(201).json(newNeighborhood);
         })

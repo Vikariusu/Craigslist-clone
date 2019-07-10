@@ -23,9 +23,11 @@ class PostList extends React.Component {
             params += 'loadrecent=8';
         }
 
-        // if (category) {
-        //     queryURL += '/category';
-        // }
+        console.log(category);
+
+        if (category) {
+            params += `category=${category}`;
+        }
 
         fetch(`${queryURL}?${params}`)
             .then(response => response.json())
