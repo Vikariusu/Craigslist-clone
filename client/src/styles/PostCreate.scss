@@ -1,0 +1,19 @@
+.post-create {
+    &__outer {
+        margin-top: 40px;
+    }
+
+    &__inner {
+        max-width: 72rem;
+        margin: 0 auto;
+    }
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+
+    input {
+        margin-left: 8px;
+    }
+}

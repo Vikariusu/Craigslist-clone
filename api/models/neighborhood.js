@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const neighborhoodSchema = new mongoose.Schema({
+    _id: {type: String},
     name: {
         type: String,
         required: "Title cannot be blank!"

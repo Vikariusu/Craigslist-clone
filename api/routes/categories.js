@@ -13,8 +13,7 @@ router.get('/', function (req, res) {
 });
 
 router.post("/", function (req, res) {
-    console.log(req.body);
-    db.Category.create(req.body)
+    db.Category.create({...req.body, _id: req.body.name})
         .then(function (newCategory) {
             res.status(201).json(newCategory);
         })

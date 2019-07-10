@@ -29,7 +29,7 @@ const postSchema = new mongoose.Schema({
         default: false
     },
     category: { 
-        type: mongoose.Schema.Types.ObjectId, 
+        type: String, 
         ref: "Category" 
     },
     created_date: {

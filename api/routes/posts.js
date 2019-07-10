@@ -4,8 +4,26 @@ const db = require("../models");
 
 router.get('/', function(req, res) {
     const limit = req.query.loadrecent ? parseInt(req.query.loadrecent) : 999;
+    // // const category = req.query.category ? parseInt(req.query.loadrecent) : 'furniture';
+    // console.log(req.query.category);
 
-    db.Post.find().sort({ _id: -1 }).limit(limit)
+    const { category } = req.query;
+    const query = {}
+
+    if (category) {
+        query.category = category;
+    }
+
+    // db.Post.find({ category: 'test' }).sort({ _id: -1 })
+    //     .then(function (posts) {
+    //         res.json(posts);
+    //     })
+    //     .catch(function (err) {
+    //         res.send(err);
+    //     })
+
+
+    db.Post.find(query).sort({ _id: -1 }).limit(limit)
         .then(function (posts) {
             res.json(posts);
         })
@@ -14,7 +32,12 @@ router.get('/', function(req, res) {
         })
 });
 
-router.post("/", function (req, res) {
+router.post("/", async (req, res) => {
+
+    // if (req.query.category) {
+    //     db.Category._id
+    // }
+
     db.Post.create(req.body)
         .then(function (newPost) {
             res.status(201).json(newPost);
