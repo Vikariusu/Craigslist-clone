@@ -22,7 +22,7 @@ const postSchema = new mongoose.Schema({
         type: String
     },
     imageUrl: {
-        type: String
+        type: Array
     },
     canDeliver: {
         type: Boolean,

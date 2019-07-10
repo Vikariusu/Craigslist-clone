@@ -1,5 +1,6 @@
 import React from 'react';
 import SimpleMap from './Map.js';
+import ImageCarousel from './ImageCarousel';
 
 class PostView extends React.Component {
     constructor(props) {
@@ -31,7 +32,8 @@ class PostView extends React.Component {
     }
 
     render() {
-        console.log(this.state.date);
+        const canDeliver = this.state.data.canDeliver ? 'yes' : 'no'
+        const condition = this.state.data.condition ? <p>Condition: {this.state.data.condition}</p> : null
 
         return (
             <div className="">
@@ -40,11 +42,9 @@ class PostView extends React.Component {
                         <div className="post-view post-view__main">
                             <h1 className="post-view__main-title">{this.state.data.title}</h1>
                             <button className="btn-primary">Reply to the seller</button>
-                            <div className="post-view__main-image">
-                                <img src="https://images.crateandbarrel.com/is/image/Crate/IconBlackWallFrameGroupFHS19" />
-                            </div>
+                            <ImageCarousel postImages={this.state.data.imageUrl}/>
                             <h2 className="secondary--heading">Description</h2>
-                            <p>{this.state.data.description} </p>
+                            <p>{this.state.data.description}</p>
                             <div className="post-details">
                                 <p>Posted: {this.state.date}</p>
                                 <p>Post id: {this.state.data._id}</p>
@@ -52,10 +52,9 @@ class PostView extends React.Component {
                         </div>
                         <div className="post-view post-view__side-info">
                             <SimpleMap center={{ lat: 40.6711, lng: -73.9814 }} zoom={13} />
-                            {/* <SimpleMap center={this.state.data.location} zoom={13} /> */}
                             <div className="post-view__product-details">
-                                <p>Condition: {this.state.data.condition}</p>
-                                <p>Delivery: no</p>
+                                {condition}
+                                <p>Delivery possible: {canDeliver}</p>
                                 <p>Email: realemail@gmail.com</p>
                             </div>
                         </div>

@@ -23,8 +23,6 @@ class PostList extends React.Component {
             params += 'loadrecent=8';
         }
 
-        console.log(category);
-
         if (category) {
             params += `category=${category}`;
         }
