@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../images/logo.png';
 
 class PostCard extends React.Component {
     constructor(props) {
@@ -6,7 +7,7 @@ class PostCard extends React.Component {
 
         this.state = {
             inFavorites: false,
-            image: this.props[0].imageUrl ? this.props[0].imageUrl : 'https://www.lampsplus.com/images/landing-pages/table-lamps-n/table-lamps_traditional-0227.jpg'
+            image: this.props[0].imageUrl.length ? this.props[0].imageUrl[0] : logo
         };
     }
 

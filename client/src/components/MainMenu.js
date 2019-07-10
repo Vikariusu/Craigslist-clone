@@ -14,6 +14,9 @@ class MainMenu extends React.Component {
                     <Link to={'categories/garden/posts'}>
                         <li className="main-menu__categories-list__item">Garden</li>
                     </Link>
+                    <Link to={'categories/jewelry/posts'}>
+                        <li className="main-menu__categories-list__item">Jewelry</li>
+                    </Link>
                     <li className="main-menu__categories-list__item">Appliances</li>
                     <li className="main-menu__categories-list__item">Arts & crafts</li>
                     <li className="main-menu__categories-list__item">Household items</li>
