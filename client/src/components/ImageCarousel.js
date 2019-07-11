@@ -18,7 +18,7 @@ class ImageCarousel extends React.Component {
             if (this.props.postImages.length === 0) {
                 return (
                     <div style={{background: 'white'}}>
-                        <img src={logo} />
+                        <img src={logo} alt=''/>
                     </div>
                 )
             }
@@ -26,8 +26,7 @@ class ImageCarousel extends React.Component {
             return this.props.postImages.map((image, i) => {
                 return (
                     <div key={`${image}-${i}`}>
-                        <img src={image} />
-                        {console.log('hi')}
+                        <img src={image} alt=''/>
                     </div>
                 )
             })

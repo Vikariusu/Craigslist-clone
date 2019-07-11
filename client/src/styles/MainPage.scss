@@ -4,26 +4,32 @@
 
 .main-menu {
     height: 50vh;
-    background-color: #e8e8e8;
-    width: 200px;
     font-family: $primary-font;
-    margin-top: 40px;
+    margin-top: 62px;
     border-radius: 0 2px 2px 0;
 
     &__caption {
-        margin-top: 0;
-        z-index: -999;
-        padding: 14px 16px;
+        margin: 0;
+        padding: 3px 16px;
         text-transform: uppercase;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.7px;
+        font-size: 12px;
+        color: $menu-caption-gray;
+        font-weight: 600;
     }
 
     &__categories-list {
+        margin-top: 0;
         padding-left: 16px;
+        font-size: 15px;
 
         &__item {
-            margin: 4px 0;
+            margin: 5px 0;
         }
+    }
+
+    a {
+        color: $menu-link-gray;
     }
 }
 

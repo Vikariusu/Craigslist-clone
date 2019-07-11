@@ -8,7 +8,8 @@ class PostList extends React.Component {
 
         this.state = {
             isLoading: false,
-            data: []
+            data: [],
+            pageType: ''
         };
     }
 
@@ -19,6 +20,7 @@ class PostList extends React.Component {
     fetchPosts({loadRecent, category}) {
         let queryURL = 'http://localhost:3000/api/posts/'
         let params = "";
+
         if (loadRecent) {
             params += 'loadrecent=8';
         }
@@ -35,7 +37,7 @@ class PostList extends React.Component {
     renderPosts = () => {
         return this.state.data.map((post) => {
             return (
-                <Link to={'posts/' + post._id}>
+                <Link to={'posts/' + post._id} key={post._id}>
                     <PostCard key={post._id} {...[post]} />
                 </Link>
             );
@@ -43,8 +45,11 @@ class PostList extends React.Component {
     }
 
     render() {
+        const caption = this.props.loadRecent ? 'Recently posted items' : this.props.category;
+
         return(
             <div className="cards__outer">
+                <p className="cards__outer__caption">{caption}</p>
                 <div className="cards">
                     {this.renderPosts()}
                 </div>

@@ -32,8 +32,9 @@ class PostView extends React.Component {
     }
 
     render() {
-        const canDeliver = this.state.data.canDeliver ? 'yes' : 'no'
-        const condition = this.state.data.condition ? <p>Condition: {this.state.data.condition}</p> : null
+        const canDeliver = this.state.data.canDeliver ? 'yes' : 'no';
+        const condition = this.state.data.condition ? <p>Condition: {this.state.data.condition}</p> : null;
+        const displayCarousel = this.state.data.imageUrl && this.state.data.imageUrl.length > 0 ? <ImageCarousel postImages={this.state.data.imageUrl} /> : null;
 
         return (
             <div className="">
@@ -42,7 +43,7 @@ class PostView extends React.Component {
                         <div className="post-view post-view__main">
                             <h1 className="post-view__main-title">{this.state.data.title}</h1>
                             <button className="btn-primary">Reply to the seller</button>
-                            <ImageCarousel postImages={this.state.data.imageUrl}/>
+                            {displayCarousel}
                             <h2 className="secondary--heading">Description</h2>
                             <p>{this.state.data.description}</p>
                             <div className="post-details">

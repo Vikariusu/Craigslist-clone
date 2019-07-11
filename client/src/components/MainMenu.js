@@ -1,5 +1,4 @@
 import React from 'react';
-import PostCard from './PostCard';
 import { Link } from 'react-router-dom'
 
 class MainMenu extends React.Component {
@@ -17,9 +16,18 @@ class MainMenu extends React.Component {
                     <Link to={'categories/jewelry/posts'}>
                         <li className="main-menu__categories-list__item">Jewelry</li>
                     </Link>
-                    <li className="main-menu__categories-list__item">Appliances</li>
-                    <li className="main-menu__categories-list__item">Arts & crafts</li>
-                    <li className="main-menu__categories-list__item">Household items</li>
+                    <Link to={'categories/household/posts'}>
+                        <li className="main-menu__categories-list__item">Household items</li>
+                    </Link>
+                    <Link to={'categories/antiques/posts'}>
+                        <li className="main-menu__categories-list__item">Antiques</li>
+                    </Link>
+                    <Link to={'categories/art/posts'}>
+                        <li className="main-menu__categories-list__item">Arts & crafts</li>
+                    </Link>
+                    <Link to={'categories/appliances/posts'}>
+                        <li className="main-menu__categories-list__item">Appliances</li>
+                    </Link>
                 </ul>
             </div>
 

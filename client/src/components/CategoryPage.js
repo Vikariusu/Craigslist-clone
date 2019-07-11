@@ -8,7 +8,6 @@ class CategoryPage extends React.Component {
             <div className="main-page__outer">
                 <MainMenu />
                 <div>
-                    {this.props.match.params.categoryName}
                     <PostList category={this.props.match.params.categoryName} />
                 </div>
             </div>
