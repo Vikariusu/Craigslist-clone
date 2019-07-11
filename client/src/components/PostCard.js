@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 
 class PostCard extends React.Component {
     constructor(props) {
@@ -16,14 +17,16 @@ class PostCard extends React.Component {
 
         return (
             <div className="post-card">
-                <img src={this.state.image} alt=''/>
-                <div className="post-card-infos">
-                    <div>
+                <Link to={'posts/' + this.props[0]._id} key={this.props[0]._id}>
+                    <img src={this.state.image} alt=''/>
+                    <div className="post-card-infos">
                         <h2>{this.props[0].title}</h2>
-                        <p>{this.props[0].location}</p>
+                        <div className="post-card-infos--secondary">
+                            <p>{this.props[0].location}</p>
+                            <p className="post-card-pricing">{displayPrice}</p>
+                        </div>
                     </div>
-                    <p className="post-card-pricing">{displayPrice}</p>
-                </div>
+                </Link>
             </div>
         )
     }
