@@ -16,7 +16,7 @@ class PostCard extends React.Component {
 
         return (
             <div className="post-card">
-                <img src={this.state.image} />
+                <img src={this.state.image} alt=''/>
                 <div className="post-card-infos">
                     <div>
                         <h2>{this.props[0].title}</h2>
