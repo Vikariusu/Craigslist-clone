@@ -10,9 +10,9 @@
   }
 
   h2 {
-    font-size: 16px;
     font-weight: bold;
     margin: 0;
+    font-size: 14px;
   }
 
   p {
@@ -22,20 +22,18 @@
   }
 
   .post-card-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
+    padding: 10px 12px;
+
+    &--secondary {
+      display: flex;
+      justify-content: space-between;
+      color: $dark-gray;
+      margin-top: 4px;
+    }
 
     h2 {
         color: $almost-black-gray;
         font-weight: 500;
-    }
-
-    p {
-        color: $dark-gray;
-        font-weight: bold;
     }
   }
 }
