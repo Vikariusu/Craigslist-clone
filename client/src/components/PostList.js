@@ -8,15 +8,38 @@ class PostList extends React.Component {
         this.state = {
             isLoading: false,
             data: [],
-            pageType: ''
+            pageType: '',
+            likedPosts: {}
         };
     }
 
-    componentDidMount() {
+    componentDidMount = async () => {
+        await this.getLikes();
         this.fetchPosts(this.props);
     }
 
-    fetchPosts({loadRecent, category}) {
+    getLikes = async () => {
+        const likedPosts = JSON.parse(localStorage.getItem("likedPosts"));
+        await this.setState({ likedPosts: likedPosts ? likedPosts : {} });
+    }
+
+    setLikes(likedPosts) {
+        localStorage.setItem("likedPosts", JSON.stringify(likedPosts))
+    }
+
+    togglePostLike = (postId) => {
+        const likedPosts = {...this.state.likedPosts}
+        if (likedPosts[postId]) {
+            delete likedPosts[postId]
+        } else {
+            likedPosts[postId] = true;
+        }
+
+        this.setLikes(likedPosts);
+        this.setState({ likedPosts });
+    }
+
+    fetchPosts({loadRecent, category, showLikes}) {
         let queryURL = 'http://localhost:3000/api/posts/'
         let params = "";
 
@@ -28,6 +51,10 @@ class PostList extends React.Component {
             params += `category=${category}`;
         }
 
+        if (showLikes) {
+            params += `postIds=${Object.keys(this.state.likedPosts).join(',')}`
+        }
+
         fetch(`${queryURL}?${params}`)
             .then(response => response.json())
             .then(data => this.setState({ data }))
@@ -35,8 +62,9 @@ class PostList extends React.Component {
 
     renderPosts = () => {
         return this.state.data.map((post) => {
+            const liked = this.state.likedPosts[post._id]
             return (
-                <PostCard key={post._id} {...[post]} />
+                <PostCard key={post._id} {...[post]} liked={liked} togglePostLike={this.togglePostLike} />
             );
         });
     }
