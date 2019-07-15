@@ -18,6 +18,14 @@
         width: 40px;
         height: 40px;
     }
+
+    .fa-heart {
+      font-size: 20px;
+      position: relative;
+      top: 2px;
+      right: 8px;
+      color: $menu-caption-gray;
+    }
 }
 
 @media (min-width: 768px) {

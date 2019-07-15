@@ -6,6 +6,7 @@ import MainPage from "./components/MainPage";
 import PostView from "./components/PostView";
 import PostCreate from "./components/PostCreate";
 import CategoryPage from "./components/CategoryPage";
+import LikedPosts from "./components/LikedPosts";
 
 const App = () => {
   return (
@@ -14,10 +15,10 @@ const App = () => {
         <div>
           <Header />
           <Route path="/" exact component={MainPage} />
-          {/* <Route path="/posts" exact component={PostList} /> */}
           <Route path="/categories/:categoryName/posts" exact component={CategoryPage} />
           <Route path="/posts/:id" component={PostView} />
           <Route path="/new" exact component={PostCreate} />
+          <Route path="/likes" exact component={LikedPosts} />
         </div>
       </BrowserRouter>
     </div>

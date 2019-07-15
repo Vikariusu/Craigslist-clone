@@ -7,9 +7,13 @@ class PostCard extends React.Component {
         super(props);
 
         this.state = {
-            inFavorites: false,
             image: this.props[0].imageUrl.length ? this.props[0].imageUrl[0] : logo
         };
+    }
+
+    handleLike = (event) => {
+        event.preventDefault();
+        this.props.togglePostLike(this.props[0]._id);
     }
 
     render() {
@@ -26,6 +30,7 @@ class PostCard extends React.Component {
                             <p className="post-card-pricing">{displayPrice}</p>
                         </div>
                     </div>
+                    <i onClick={this.handleLike} className={"fa fa-heart" + (this.props.liked ? '' : '-o')} />
                 </Link>
             </div>
         )

@@ -1,27 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const mongoose = require('mongoose');
 
 router.get('/', function(req, res) {
     const limit = req.query.loadrecent ? parseInt(req.query.loadrecent) : 999;
-    // // const category = req.query.category ? parseInt(req.query.loadrecent) : 'furniture';
-    // console.log(req.query.category);
-
-    const { category } = req.query;
-    const query = {}
+    const { category, postIds } = req.query;
+    const query = {};
 
     if (category) {
         query.category = category;
     }
 
-    // db.Post.find({ category: 'test' }).sort({ _id: -1 })
-    //     .then(function (posts) {
-    //         res.json(posts);
-    //     })
-    //     .catch(function (err) {
-    //         res.send(err);
-    //     })
-
+    if (postIds) {
+        query._id = {
+            $in: postIds.split(',').map((postId) => mongoose.Types.ObjectId(postId))
+        }
+    }
 
     db.Post.find(query).sort({ _id: -1 }).limit(limit)
         .then(function (posts) {
@@ -32,12 +27,7 @@ router.get('/', function(req, res) {
         })
 });
 
-router.post("/", async (req, res) => {
-
-    // if (req.query.category) {
-    //     db.Category._id
-    // }
-
+router.post('/', async (req, res) => {
     db.Post.create(req.body)
         .then(function (newPost) {
             res.status(201).json(newPost);
@@ -47,7 +37,7 @@ router.post("/", async (req, res) => {
         })
 });
 
-router.get("/:postId", async (req, res) => {
+router.get('/:postId', async (req, res) => {
     try {
         const foundPost = await db.Post.findById(req.params.postId)
         const location = await db.Neighborhood.find({name: foundPost.location});
