@@ -2,6 +2,7 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import logo from '../images/logo.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import PropTypes from 'prop-types'; 
 
 class ImageCarousel extends React.Component {
     constructor(props) {
@@ -42,6 +43,10 @@ class ImageCarousel extends React.Component {
             </div>
         )
     }
+}
+
+ImageCarousel.propTypes = {
+    postImages: PropTypes.array
 }
 
 export default ImageCarousel;

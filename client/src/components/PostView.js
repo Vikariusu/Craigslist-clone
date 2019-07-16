@@ -1,6 +1,7 @@
 import React from 'react';
 import SimpleMap from './Map.js';
 import ImageCarousel from './ImageCarousel';
+import PropTypes from 'prop-types'; 
 
 class PostView extends React.Component {
     constructor(props) {
@@ -64,6 +65,12 @@ class PostView extends React.Component {
             </div>
         )
     }
+}
+
+PostView.propTypes = {
+    location: PropTypes.object,
+    history: PropTypes.object,
+    match: PropTypes.object
 }
 
 export default PostView;
