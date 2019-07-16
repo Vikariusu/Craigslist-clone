@@ -1,5 +1,6 @@
 import React from 'react';
 import PostCard from './PostCard';
+import PropTypes from 'prop-types'; 
 
 class PostList extends React.Component {
     constructor(props) {
@@ -64,7 +65,7 @@ class PostList extends React.Component {
         return this.state.data.map((post) => {
             const liked = this.state.likedPosts[post._id]
             return (
-                <PostCard key={post._id} {...[post]} liked={liked} togglePostLike={this.togglePostLike} />
+                <PostCard key={post._id} {...post} liked={liked} togglePostLike={this.togglePostLike} />
             );
         });
     }
@@ -81,6 +82,11 @@ class PostList extends React.Component {
             </div>
         )
     }
+}
+
+PostList.propTypes = {
+    loadRecent: PropTypes.string,
+    liked: PropTypes.bool
 }
 
 export default PostList;
