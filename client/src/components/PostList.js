@@ -19,6 +19,13 @@ class PostList extends React.Component {
         this.fetchPosts(this.props);
     }
 
+    componentDidUpdate(prevProps) {
+        // check if category changed
+        if (this.props.category !== prevProps.category) {
+            this.fetchPosts(this.props);
+        }
+    } 
+
     getLikes = async () => {
         const likedPosts = JSON.parse(localStorage.getItem("likedPosts"));
         await this.setState({ likedPosts: likedPosts ? likedPosts : {} });
@@ -41,7 +48,7 @@ class PostList extends React.Component {
     }
 
     fetchPosts({loadRecent, category, showLikes}) {
-        let queryURL = 'http://localhost:3000/api/posts/'
+        let queryURL = 'http://localhost:7777/api/posts/'
         let params = "";
 
         if (loadRecent) {

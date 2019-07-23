@@ -28,7 +28,9 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', async (req, res) => {
-    db.Post.create(req.body)
+    const neighborhood = await db.Neighborhood.findOne({ name: req.body.location });
+
+    db.Post.create({ ...req.body, neighborhood: neighborhood._id})
         .then(function (newPost) {
             res.status(201).json(newPost);
         })
@@ -40,9 +42,9 @@ router.post('/', async (req, res) => {
 router.get('/:postId', async (req, res) => {
     try {
         const foundPost = await db.Post.findById(req.params.postId)
-        const location = await db.Neighborhood.find({name: foundPost.location});
+        const neighborhood = await db.Neighborhood.findById(foundPost.neighborhood);
 
-        res.json({...foundPost._doc, location: location[0]});
+        res.json({ ...foundPost._doc, neighborhood: neighborhood});
     } catch (err) {
         res.send(err);
     }

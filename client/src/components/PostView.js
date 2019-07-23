@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 class PostView extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
+            isLoading: true,
             postId: this.props.match.params.id,
             data: {},
             date: null
@@ -19,12 +21,12 @@ class PostView extends React.Component {
 
     getDate = () => {
         const postDate = Date.parse(this.state.data.created_date);
-        const formattedDate = new Date(postDate).toString();
+        const formattedDate = new Date(postDate).toGMTString();
         this.setState({ date: formattedDate });
     }
 
     getPostData = () => {
-        fetch(`http://localhost:3000/api/posts/${this.state.postId}`)
+        fetch(`http://localhost:7777/api/posts/${this.state.postId}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({ data });
@@ -36,6 +38,7 @@ class PostView extends React.Component {
         const canDeliver = this.state.data.canDeliver ? 'yes' : 'no';
         const condition = this.state.data.condition ? <p>Condition: {this.state.data.condition}</p> : null;
         const displayCarousel = this.state.data.imageUrl && this.state.data.imageUrl.length > 0 ? <ImageCarousel postImages={this.state.data.imageUrl} /> : null;
+        const displayMap = this.state.data.neighborhood ? <SimpleMap center={this.state.data.neighborhood.coordinates} zoom={13} /> : null;
 
         return (
             <div className="">
@@ -53,7 +56,7 @@ class PostView extends React.Component {
                             </div>
                         </div>
                         <div className="post-view post-view__side-info">
-                            <SimpleMap center={{ lat: 40.6711, lng: -73.9814 }} zoom={13} />
+                            {displayMap}
                             <div className="post-view__product-details">
                                 {condition}
                                 <p>Delivery possible: {canDeliver}</p>
