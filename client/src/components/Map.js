@@ -1,6 +1,5 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-// require('dotenv').config({ path: 'variables.env' });
 
 const apiIsLoaded = (map, maps, center) => {
     const circle = new maps.Circle({
@@ -15,11 +14,12 @@ const apiIsLoaded = (map, maps, center) => {
     });
 };
 
+// leaving the key public for now (ง'̀-'́)ง
 const SimpleMap = ({ center, zoom }) => {
     return (
         <div style={{ height: '40vh', width: '100%' }}>
             <GoogleMapReact
-                bootstrapURLKeys={{ key: 'XXXX' }}
+                bootstrapURLKeys={{ key: 'AIzaSyBoQ8vQuw1BLqAYimCkdaKIqCH9YDVU27A' }}
                 yesIWantToUseGoogleMapApiInternals={true}
                 defaultZoom={zoom}
                 defaultCenter={center}

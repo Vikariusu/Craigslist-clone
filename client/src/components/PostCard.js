@@ -19,10 +19,11 @@ class PostCard extends React.Component {
 
     render() {
         const displayPrice = this.props.price ? `$${this.props.price}` : '$0';
+        const categoryLink = this.props.category ? '../../' : '';
 
         return (
             <div className="post-card">
-                <Link to={'posts/' + this.props._id} key={this.props._id}>
+                <Link to={categoryLink + 'posts/' + this.props._id} key={this.props._id}>
                     <img src={this.state.image} alt=''/>
                     <div className="post-card-infos">
                         <h2>{this.props.title}</h2>

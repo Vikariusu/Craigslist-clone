@@ -32,6 +32,10 @@ const postSchema = new mongoose.Schema({
         type: String, 
         ref: "Category" 
     },
+    neighborhood: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Neighborhood"
+    },
     created_date: {
         type: Date,
         default: Date.now

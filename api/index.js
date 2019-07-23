@@ -28,6 +28,6 @@ app.use('/api/posts', postRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/neighborhoods', neighborhoodRoutes);
 
-app.listen(3000, function () {
+app.listen(7777, function () {
     console.log("~ Staring the server ~");
 })
