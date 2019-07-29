@@ -2,6 +2,7 @@ import React from 'react';
 import Spinner from './Spinner';
 import Images from './Images';
 import Buttons from './Buttons';
+import PropTypes from 'prop-types'; 
 
 class ImageUploader extends React.Component {
     state = {
@@ -61,6 +62,11 @@ class ImageUploader extends React.Component {
             </div>
         )
     }
+}
+
+ImageUploader.propTypes = {
+    imageUrl: PropTypes.array,
+    updateImages: PropTypes.func
 }
 
 export default ImageUploader;

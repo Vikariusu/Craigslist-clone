@@ -4,14 +4,21 @@ $backgroud-color: #EEEEEE;
 $pastel-gray: #CCCCCC;
 $almost-black-gray: #797979;
 
+/* 
+  Accent colors
+*/
 $amazon: #F7717D;
 $weldon-blue: #7A9E9F;
 
-// menu colors
+/* 
+  Main menu colors
+*/
 $menu-link-gray: #586368;
 $menu-caption-gray: #34434B;
 
-// Main action btn
+/* 
+  Buttons and other calls to action
+*/
 .btn-primary {
     background-color: $backgroud-color;
     border-radius: 2px;
@@ -41,4 +48,12 @@ $menu-caption-gray: #34434B;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+/* 
+  Link tags
+*/
+.link-secondary {
+    color: darken($weldon-blue, 15%);
+    font-weight: 500;
 }

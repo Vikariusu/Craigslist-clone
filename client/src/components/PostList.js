@@ -1,6 +1,7 @@
 import React from 'react';
-import PostCard from './PostCard';
 import PropTypes from 'prop-types'; 
+import { Link } from 'react-router-dom';
+import PostCard from './PostCard';
 
 class PostList extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class PostList extends React.Component {
         this.state = {
             isLoading: false,
             data: [],
-            pageType: '',
+            pageName: this.props.pageName || '',
             likedPosts: {}
         };
     }
@@ -51,6 +52,7 @@ class PostList extends React.Component {
         let queryURL = 'http://localhost:7777/api/posts/'
         let params = "";
 
+        // load the last 8 listing for the main page
         if (loadRecent) {
             params += 'loadrecent=8';
         }
@@ -59,6 +61,7 @@ class PostList extends React.Component {
             params += `category=${category}`;
         }
 
+        // load liked posts for 'likes' page
         if (showLikes) {
             params += `postIds=${Object.keys(this.state.likedPosts).join(',')}`
         }
@@ -69,6 +72,17 @@ class PostList extends React.Component {
     }
 
     renderPosts = () => {
+        // check if 'likes' object is empty for likedPosts page
+        if (this.state.pageName === 'likedPostsPage') {
+            if (Object.keys(this.state.likedPosts).length === 0 && this.state.likedPosts.constructor === Object) {
+                return (
+                    <div className="liked-posts-empty">
+                        <p>Ooops, you haven't liked any posts yet! <Link to={'/'} className="link-secondary">Explore recent posts.</Link></p>
+                    </div>
+                )
+            }
+        }
+
         return this.state.data.map((post) => {
             const liked = this.state.likedPosts[post._id]
             return (
@@ -93,6 +107,7 @@ class PostList extends React.Component {
 
 PostList.propTypes = {
     loadRecent: PropTypes.string,
+    pageName: PropTypes.string,
     liked: PropTypes.bool
 }
 

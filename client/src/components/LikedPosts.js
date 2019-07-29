@@ -8,7 +8,7 @@ class LikedPosts extends React.Component {
             <div className="liked-posts">
                 <h2>Loves</h2>
                 <p>Make it easy to find your favorite offers. Remember - once they're gone, they're gone!</p>
-                <PostList showLikes={true} />
+                <PostList showLikes={true} pageName='likedPostsPage' />
             </div>
         )
     }
