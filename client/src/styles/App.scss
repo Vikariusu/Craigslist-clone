@@ -8,7 +8,27 @@
 @import 'MainPage';
 @import 'PostCreate';
 @import 'LikedPosts';
+@import 'Spinner';
 
 li {
     list-style: none;
+}
+
+// content inner media queries
+@media (min-width: 768px) {
+  .content-inner {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .content-inner {
+    padding: 0 26px;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .content-inner {
+    padding: 0 14px;
+  }
 }

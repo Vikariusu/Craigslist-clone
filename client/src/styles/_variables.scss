@@ -5,6 +5,7 @@ $pastel-gray: #CCCCCC;
 $almost-black-gray: #797979;
 
 $amazon: #F7717D;
+$weldon-blue: #7A9E9F;
 
 // menu colors
 $menu-link-gray: #586368;
@@ -18,6 +19,17 @@ $menu-caption-gray: #34434B;
     padding: 6px 10px;
     font-size: $side-text;
     color: $almost-black-gray;
+}
+
+.btn-primary-action {
+    background-color: $weldon-blue;
+    border-radius: 2px;
+    border: none;
+    font-size: 12px;
+    padding: 6px 10px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
 }
 
 .btn-secondary {
