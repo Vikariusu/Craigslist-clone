@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types'; 
-import MainMenu from './MainMenu';
-import PostList from './PostList';
+import React from "react";
+import PropTypes from "prop-types";
+import MainMenu from "./MainMenu";
+import PostList from "./PostList";
 
 class CategoryPage extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class CategoryPage extends React.Component {
                     <PostList category={this.props.match.params.categoryName} />
                 </div>
             </div>
-        )
+        );
     }
 }
 
@@ -20,6 +20,6 @@ CategoryPage.propTypes = {
     history: PropTypes.object,
     location: PropTypes.object,
     match: PropTypes.object.isRequired
-}
+};
 
 export default CategoryPage;
