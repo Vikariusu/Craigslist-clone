@@ -1,0 +1,116 @@
+[
+  {
+    "imageUrl": [
+      "http://res.cloudinary.com/dsdeorvu4/image/upload/v1564359457/qircb3vj2jxdka0uerpf.jpg"
+    ],
+    "canDeliver": true,
+    "_id": "5d3e3c335de1fa2fbac8cef7",
+    "category": "furniture",
+    "title": "Midcentury modern table",
+    "price": 300,
+    "condition": "excellent",
+    "email": "totallyarealemail@email.com",
+    "description": "Selling this gorgeous table because I need money.",
+    "location": "Downtown Brooklyn",
+    "neighborhood": "5d35e84fe7179a26a9737d02",
+    "created_date": "2019-07-29T00:22:11.347Z",
+    "__v": 0
+  },
+  {
+    "imageUrl": [
+      "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Outdoor/Garden_Center/Pots_and_Planters/potsplanters-raised-garden-beds-2.jpg"
+    ],
+    "canDeliver": false,
+    "_id": "5d35033b2ac2fc1b4e11fb56",
+    "title": "Cool stuff",
+    "description": "Selling garden planters, never used!",
+    "email": "fakeemail@gmail.com",
+    "price": 45,
+    "category": "garden",
+    "neighborhood": "5d163a2030889f1ef8ab8e39",
+    "created_date": "2019-07-22T00:28:43.494Z",
+    "__v": 0
+  },
+  {
+    "imageUrl": [
+      "https://www.westelm.com/weimgs/ab/images/wcm/products/201922/0271/oversized-glass-vase-c.jpg"
+    ],
+    "canDeliver": false,
+    "_id": "5d264cb841a9d893a0a35488",
+    "title": "Oversized vase West Elm",
+    "description": "I'm moving out and decided to sell stuff I no longer need, pick up asap.",
+    "email": "fakeemail@gmail.com",
+    "price": 10,
+    "neighborhood": "436c696e746f6e2048696c6c",
+    "category": "household",
+    "created_date": "2019-07-10T20:38:16.834Z",
+    "__v": 0
+  },
+  {
+    "imageUrl": [],
+    "canDeliver": false,
+    "_id": "5d26294e41a9d893a0a35487",
+    "title": "A lot of jewelry - cheap!",
+    "description": "I'm moving out and decided to sell stuff I no longer need, pick up asap.",
+    "email": "fakeemail@gmail.com",
+    "price": 0,
+    "category": "jewelry",
+    "created_date": "2019-07-10T18:07:10.125Z",
+    "__v": 0
+  },
+  {
+    "imageUrl": [
+      "https://richmedia.channeladvisor.com/ImageDelivery/imageService?profileId=12026540&id=659047&recipeId=728",
+      "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Outdoor/Garden_Center/Pots_and_Planters/potsplanters-raised-garden-beds-2.jpg"
+    ],
+    "canDeliver": false,
+    "_id": "5d261e4341a9d893a0a35486",
+    "condition": "new",
+    "title": "Garden planters",
+    "description": "Selling garden planters, never used!",
+    "email": "fakeemail@gmail.com",
+    "price": 45,
+    "location": "Park Slope",
+    "neighborhood": "5d163a2030889f1ef8ab8e39",
+    "category": "garden",
+    "created_date": "2019-07-10T17:20:03.652Z",
+    "__v": 0
+  },
+  {
+    "imageUrl": [
+      "https://images.containerstore.com/catalogimages/208228/10062627WaterTightToteClear74qt_x.jpg?width=1200&height=1200&align=center"
+    ],
+    "canDeliver": false,
+    "_id": "5d129442eec1035539b3df7c",
+    "title": "Storage containers",
+    "neighborhood": "5d163a2030889f1ef8ab8e39",
+    "__v": 0,
+    "created_date": "2019-07-30T02:05:31.201Z"
+  },
+  {
+    "imageUrl": [
+      "http://cdn.shopify.com/s/files/1/1935/8089/products/Sofa_MeridianBlue_Maple_860x520_43ebd4d9-5731-4c0e-bf9d-3a989868e997_1024x1024.jpg?v=1549467303"
+    ],
+    "canDeliver": false,
+    "_id": "5d129411eec1035539b3df7b",
+    "title": "Brand new couch",
+    "category": "furniture",
+    "__v": 0,
+    "created_date": "2019-07-30T02:05:31.201Z"
+  },
+  {
+    "imageUrl": [
+      "https://www.westelm.com/weimgs/ab/images/wcm/products/201922/0258/modernist-mugs-o.jpg",
+      "https://www.westelm.com/weimgs/ab/images/wcm/products/201922/0047/modernist-mugs-o.jpg"
+    ],
+    "canDeliver": false,
+    "_id": "5d0bcd55eec1035539b3df7a",
+    "title": "Selling some mugs",
+    "price": 10,
+    "location": "Greenpoint",
+    "neighborhood": "5d35efc5e7179a26a9738041",
+    "category": "household",
+    "__v": 0,
+    "created_date": "2019-07-30T02:05:31.201Z"
+  }
+]

@@ -22,7 +22,7 @@ class PostCard extends React.Component {
         const categoryLink = this.props.category ? '../../' : '';
 
         return (
-            <div className="post-card">
+            <div className="post-card" data-test="post-card">
                 <Link to={categoryLink + 'posts/' + this.props._id} key={this.props._id}>
                     <img src={this.state.image} alt=''/>
                     <div className="post-card-infos">
