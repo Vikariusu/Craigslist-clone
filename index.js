@@ -34,6 +34,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-app.listen(7777, function() {
+app.listen(process.env.PORT || 5000, function() {
   console.log("~ Starting the server ~");
 });
