@@ -8,9 +8,6 @@
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install --production && npm run build"
   },
-  "now": {
-    "dotenv": "variables.env.now"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
