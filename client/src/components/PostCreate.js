@@ -34,7 +34,7 @@ class PostCreate extends React.Component {
     }
 
     handleSubmit = (event) => {
-        let queryURL = 'http://localhost:7777/api/posts/';
+        let queryURL = '/api/posts/';
         let data = this.state.newPost;
 
         fetch(queryURL, {

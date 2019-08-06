@@ -49,7 +49,7 @@ class PostList extends React.Component {
     }
 
     fetchPosts({loadRecent, category, showLikes}) {
-        let queryURL = 'http://localhost:7777/api/posts/'
+        let queryURL = '/api/posts/'
         let params = "";
 
         // load the last 8 listing for the main page

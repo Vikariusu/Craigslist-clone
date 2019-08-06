@@ -47,5 +47,6 @@
     "prettier": "^1.18.2",
     "start-server-and-test": "^1.9.1",
     "whatwg-fetch": "^3.0.0"
-  }
+  },
+  "proxy": "http://localhost:7777"
 }
