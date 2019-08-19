@@ -1,17 +1,21 @@
-@import 'fonts';
-@import 'variables';
-@import 'mixins';
-@import 'Header';
-@import 'PostView';
-@import 'PostList';
-@import 'PostCard';
-@import 'MainPage';
-@import 'PostCreate';
-@import 'LikedPosts';
-@import 'Spinner';
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "Header";
+@import "PostView";
+@import "PostList";
+@import "PostCard";
+@import "MainPage";
+@import "PostCreate";
+@import "LikedPosts";
+@import "Spinner";
 
 li {
-    list-style: none;
+  list-style: none;
+}
+
+a {
+  color: inherit;
 }
 
 // content inner media queries
