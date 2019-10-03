@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PostCard from './PostCard';
 
@@ -11,7 +11,8 @@ class PostList extends React.Component {
             isLoading: false,
             data: [],
             pageName: this.props.pageName || '',
-            likedPosts: {}
+            likedPosts: {},
+            sortedBy: 'lowest'
         };
     }
 
@@ -25,7 +26,18 @@ class PostList extends React.Component {
         if (this.props.category !== prevProps.category) {
             this.fetchPosts(this.props);
         }
-    } 
+    }
+
+    handleSort = (event) => {
+        let posts = this.state.data;
+
+        // handles sorting from the cheapest
+        // TODO: handle sorting from the newest and most expensive items
+        posts.sort((a, b) => (a.price > b.price) ? 1 : -1);
+
+        this.setState({ ...this.state, data: posts, sortedBy: event.target.value });
+    }
+
 
     getLikes = async () => {
         const likedPosts = JSON.parse(localStorage.getItem("likedPosts"));
@@ -37,7 +49,7 @@ class PostList extends React.Component {
     }
 
     togglePostLike = (postId) => {
-        const likedPosts = {...this.state.likedPosts}
+        const likedPosts = { ...this.state.likedPosts }
         if (likedPosts[postId]) {
             delete likedPosts[postId]
         } else {
@@ -48,7 +60,7 @@ class PostList extends React.Component {
         this.setState({ likedPosts });
     }
 
-    fetchPosts({loadRecent, category, showLikes}) {
+    fetchPosts({ loadRecent, category, showLikes }) {
         let queryURL = '/api/posts/'
         let params = "";
 
@@ -94,13 +106,19 @@ class PostList extends React.Component {
     render() {
         const caption = this.props.loadRecent ? 'Recently posted items' : this.props.category;
 
-        return(
+        return (
             <div className="cards__outer">
                 <p className="cards__outer__caption">{caption}</p>
+                <span>Sort by:</span>
+                <select value={this.state.sortedBy} onChange={this.handleSort} className="dropdown-main">
+                    <option value="newest">Newest</option>
+                    <option value={-1}>Lowest price</option>
+                    <option value="highest">Highest price</option>
+                </select>
                 <div className="cards">
                     {this.renderPosts()}
                 </div>
-            </div>
+            </div >
         )
     }
 }

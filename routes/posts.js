@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../models");
 const mongoose = require('mongoose');
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     const limit = req.query.loadrecent ? parseInt(req.query.loadrecent) : 999;
     const { category, postIds } = req.query;
     const query = {};
@@ -28,9 +28,11 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', async (req, res) => {
+    console.log(req.body.price);
     const neighborhood = await db.Neighborhood.findOne({ name: req.body.location });
+    const price = req.body.price || 0; // if price is not given set it to 0
 
-    db.Post.create({ ...req.body, neighborhood: neighborhood._id})
+    db.Post.create({ ...req.body, neighborhood: neighborhood._id, price: price })
         .then(function (newPost) {
             res.status(201).json(newPost);
         })
@@ -44,7 +46,7 @@ router.get('/:postId', async (req, res) => {
         const foundPost = await db.Post.findById(req.params.postId)
         const neighborhood = await db.Neighborhood.findById(foundPost.neighborhood);
 
-        res.json({ ...foundPost._doc, neighborhood: neighborhood});
+        res.json({ ...foundPost._doc, neighborhood: neighborhood });
     } catch (err) {
         res.send(err);
     }
