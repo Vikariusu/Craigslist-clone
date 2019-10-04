@@ -54,6 +54,9 @@ class PostView extends React.Component {
     const emailInfo = this.state.data.email ? (
       <p>Email: {this.state.data.email}</p>
     ) : null;
+    const price = this.state.data.price ? (
+      <p> ${this.state.data.price}</p>
+    ) : null;
 
     return (
       <div className="">
@@ -63,6 +66,7 @@ class PostView extends React.Component {
               <h1 className="post-view__main-title">
                 {this.state.data.title}
               </h1>
+              {price}
               {emailSeller}
               {displayCarousel}
               <h2 className="secondary--heading">Description</h2>

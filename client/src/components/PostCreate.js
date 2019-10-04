@@ -199,6 +199,7 @@ class PostCreate extends React.Component {
                     </option>
                     <option value="antiques">antiques</option>
                     <option value="appliances">appliances</option>
+                    <option value="art">art&amp;crafts</option>
                     <option value="furniture">furniture</option>
                     <option value="garden">garden</option>
                     <option value="household">household</option>
