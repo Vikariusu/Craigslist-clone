@@ -9,7 +9,7 @@ class CategoryPage extends React.Component {
             <div className="main-page__outer">
                 <MainMenu page="category" />
                 <div>
-                    <PostList category={this.props.match.params.categoryName} />
+                    <PostList category={this.props.match.params.categoryName} pageName="category-page" />
                 </div>
             </div>
         );

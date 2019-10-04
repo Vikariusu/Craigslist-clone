@@ -34,5 +34,6 @@ npm start
 - User can select categories
 
 ### Todo
+- React Context
 - Advanced search filters (by price, neighborhood, etc.)
 - Pagination

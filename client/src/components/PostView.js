@@ -60,7 +60,9 @@ class PostView extends React.Component {
         <div className="">
           <div className="post-view">
             <div className="post-view post-view__main">
-              <h1 className="post-view__main-title">{this.state.data.title}</h1>
+              <h1 className="post-view__main-title">
+                {this.state.data.title}
+              </h1>
               {emailSeller}
               {displayCarousel}
               <h2 className="secondary--heading">Description</h2>
