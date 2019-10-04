@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import MainMenu from './MainMenu';
 import PostList from './PostList';
 
@@ -7,7 +7,7 @@ const MainPage = () => {
     return (
         <div className="main-page__outer">
             <MainMenu />
-            <PostList loadRecent="true" />
+            <PostList loadRecent="true" pageName='mainPage' />
         </div>
     )
 }

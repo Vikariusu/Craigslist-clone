@@ -12,7 +12,7 @@ class PostList extends React.Component {
             data: [],
             pageName: this.props.pageName || '',
             likedPosts: {},
-            sortedBy: 'lowest'
+            sortedBy: 'newest'
         };
     }
 
@@ -28,12 +28,28 @@ class PostList extends React.Component {
         }
     }
 
+    // parses ISO Date to Date format
+    parseISOString = (s) => {
+        var b = s.split(/\D+/);
+        return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
+    }
+
+    // TODO: refactor
     handleSort = (event) => {
         let posts = this.state.data;
 
-        // handles sorting from the cheapest
-        // TODO: handle sorting from the newest and most expensive items
-        posts.sort((a, b) => (a.price > b.price) ? 1 : -1);
+        if (event.target.value === 'lowest') {
+            // lowest price first
+            posts.sort((a, b) => (a.price > b.price) ? 1 : -1);
+        } else if (event.target.value === 'highest') {
+            // highest price first
+            posts.sort((a, b) => (a.price < b.price) ? 1 : -1);
+        } else {
+            // newest items first
+            posts.sort((a, b) => {
+                return this.parseISOString(b.created_date) - this.parseISOString(a.created_date)
+            })
+        }
 
         this.setState({ ...this.state, data: posts, sortedBy: event.target.value });
     }
@@ -108,13 +124,19 @@ class PostList extends React.Component {
 
         return (
             <div className="cards__outer">
-                <p className="cards__outer__caption">{caption}</p>
-                <span>Sort by:</span>
-                <select value={this.state.sortedBy} onChange={this.handleSort} className="dropdown-main">
-                    <option value="newest">Newest</option>
-                    <option value={-1}>Lowest price</option>
-                    <option value="highest">Highest price</option>
-                </select>
+                <div className="cards__outer__sort">
+                    <p className="cards__outer__caption">{caption}</p>
+                    {this.state.pageName !== 'likedPostsPage' ?
+                        <div>
+                            <span className="text-medium">Sort by:</span>
+                            <select value={this.state.sortedBy} onChange={this.handleSort} className="dropdown-main">
+                                <option value="newest">Newest</option>
+                                <option value="lowest">Lowest price</option>
+                                <option value="highest">Highest price</option>
+                            </select>
+                        </div> : null
+                    }
+                </div>
                 <div className="cards">
                     {this.renderPosts()}
                 </div>

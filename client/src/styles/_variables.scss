@@ -59,6 +59,7 @@ $menu-caption-gray: #34434b;
   -moz-appearance: none;
   appearance: none; // Remove default arrow 
   padding: 6px;
+  width: 130px;
 
   // arrow styling by Veiko, https://codepen.io/vkjgr/pen/VYMeXp
   background-image:
@@ -84,7 +85,6 @@ $menu-caption-gray: #34434b;
 /* 
   Alerts
 */
-
 .flash {
   padding: 16px 24px;
   display: flex;

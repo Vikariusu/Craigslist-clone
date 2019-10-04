@@ -62,9 +62,6 @@ class PostView extends React.Component {
             <div className="post-view post-view__main">
               <h1 className="post-view__main-title">
                 {this.state.data.title}
-                <span>
-                  <i className={"fa fa-heart"} />
-                </span>
               </h1>
               {emailSeller}
               {displayCarousel}
